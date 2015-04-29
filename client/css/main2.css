@@ -1,0 +1,15 @@
+#pg
+{
+    width:80%;
+    margin:30px auto auto auto;
+}
+
+#pg:only-child
+{
+    padding:10px;
+}
+
+.venueResult {
+    width:90%;
+    margin:10px 0;
+}

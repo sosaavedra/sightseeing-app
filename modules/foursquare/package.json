@@ -1,0 +1,15 @@
+{
+  "name": "foursquare",
+  "version": "1.0.0",
+  "description": "A module to send API Requests to foursquare API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Zimmermann <simon.zimmermann@mytum.de>",
+  "license": "ISC",
+  "dependencies": {
+    "request": "latest",
+    "querystring": "latest"
+  }
+}

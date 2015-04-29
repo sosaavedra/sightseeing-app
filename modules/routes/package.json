@@ -1,0 +1,16 @@
+{
+  "name": "routes",
+  "version" : "1.0.0",
+  "description": "Routing done in SightSeeing App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Zimmermann <simon.zimmermann@mytum.de>",
+  "license": "ISC",
+  "dependencies": {
+    "request": "latest",
+    "querystring": "latest",
+    "body-parser": "latest"
+  }
+}

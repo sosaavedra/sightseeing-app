@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de" ng-app="sightseeing">
+<head>
+    <meta charset="UTF-8">
+    <title>Sightseeing App</title>
+    <link rel="stylesheet" href="/lib/angular-material/angular-material.css"/>
+    
+    <link rel="stylesheet" href="/css/main.css"/>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6VNU1M4522NuWqE-gyc8gz2fb7iikKRU&sensor=true&libraries=places">
+    </script>
+    <script src="/lib/angular/angular.js"></script>
+
+    <script src="/lib/angular-animate/angular-animate.js"></script>
+    <script src="/lib/angular-route/angular-route.js"></script>
+    <script src="/lib/angular-aria/angular-aria.js"></script>
+    <script src="/lib/hammerjs/hammer.js"></script>
+    <script src="/lib/json3/lib/json3.js"></script>
+    <script src="/lib/angular-material/angular-material.js"></script>
+    <script src="/lib/angular-touch/angular-touch.js"></script>
+    <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    
+    <script src="/js/app.js"></script>
+    <script src="/js/services/modal.service.js"></script>
+    <script src="/js/services/fsCategories.service.js"></script>
+    <script src="/js/controllers/main-controller.js"></script>
+    <script src="/js/controllers/foursquare-controller.js"></script>
+    <script src="/js/controllers/distance-controller.js"></script>
+    <script src="/js/controllers/ordering-controller.js"></script>
+    <script src="/js/controllers/plan-controller.js"></script>
+    <script src="/js/controllers/map-controller.js"></script>
+    <script src='/lib/lodash/dist/lodash.js'></script>
+    <script src='/lib/angular-google-maps/dist/angular-google-maps.min.js'></script>
+
+    <meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/main.css" type="text/css"/>
+
+</head>
+<body>
+    <div ng-controller="MainCtrl">
+        <!-- here comes the dynamically laoded view (look into app.js to see how routeProvider is utilized) -->
+        <div ng-view></div>
+    </div>
+</body>
+</html>

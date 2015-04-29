@@ -1,0 +1,43 @@
+	<div class="top-bar">
+		<a ng-href="#/" style="position: absolute; left: 15px; top: 2px; color: white; text-shadow: none;"><</a>
+		<img src="img/logo.png"/>
+	</div>
+
+	<div class="content" ng-controller="PlanCtrl">
+		<div ng-include="'views/plan/templates/templatecache.html'"></div>
+		
+		<div id="step{{$index}}" route="{{step.routeExpanded}}" class="plan-step animate-hide {{steps[$index].shuffle}} {{compareTime(step.arrivalString, steps[1].arrivalString)}}" ng-repeat="step in steps" ng-swipe-right="shuffleStep($index)" ng-swipe-left="deleteStep($index, $last)" ng-hide="steps[$index].hide" ng-mousedown="expandRoute($index);" my-touchend="hideTips($index);" my-touchstart="showTips($index);">
+
+			<div class="step-tips" ng-hide="step.tipHide">
+				< delete &nbsp;&nbsp;&nbsp; <strong>Swipe</strong> &nbsp;&nbsp;&nbsp; shuffle >
+			</div>
+		  <div shuffling="{{step.shuffleProcessing}}" class="plan-step-left {{step.shuffle}}">
+
+		  	<div class="plan-line plan-line-first" ng-if="$first"></div>
+		  	<div class="plan-line" ng-if="(!$first && !$last)"></div>
+		  	<div class="plan-line plan-line-last" ng-if="$last"></div>
+
+		  	<img class="plan-left-illustration" ng-if="$first" src="img/first-step.png"/>
+		  	<img class="plan-left-illustration" ng-if="(!$first && !$last)" src="img/step.png"/>
+		  	<img class="plan-left-illustration" ng-if="$last" src="img/last-step.png"/>
+		  </div>
+		  <div class="plan-step-middle">
+		  	<br />
+		  	<span><!-- {{step.transport}} --></span> <br/>
+		  	<strong>{{step.name}}</strong>  &nbsp;&nbsp; <strong class="step-arrival-time"> <span class="glyphicon glyphicon-time"> </span> {{step.arrivalString}} <span ng-if="$first">Now</span></strong> 
+		  	<p class="plan-step-instructions">
+		  		{{step.instructions}}
+		  	</p>
+		  	<div ng-include="step.template" />
+			</div>
+		  </div>
+			
+		  <!-- <div class="plan-step-right">
+		  	<small>{{step.time}}</small>
+		  </div> -->
+		</div>
+		<div class="startButton">
+			<a href="#/map" class="btn btn-success"> Start Detour </a>
+		</div>
+
+	</div>

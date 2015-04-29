@@ -1,0 +1,15 @@
+<h2>
+    Main Program
+</h2>
+<div layout="horizontal">
+    <md-text-float label="From (Latitude)" ng-model="latFrom"> </md-text-float>
+    <md-text-float label="From (Longitude)" ng-model="longFrom"> </md-text-float>
+</div>
+<div layout="horizontal">
+    <md-text-float label="To (Latitude)" ng-model="latTo"> </md-text-float>
+    <md-text-float label="To (Longitude)" ng-model="longTo"> </md-text-float>
+</div>
+
+<md-button ng-click="doMain()">Get Results</md-button>
+<br />
+<md-item class="md-whiteframe-z1">{{result}}</md-item>

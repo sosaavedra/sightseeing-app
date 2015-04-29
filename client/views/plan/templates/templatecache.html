@@ -1,0 +1,41 @@
+<script type="text/ng-template" id="empty_route.html">
+    including stuff...
+</script>
+
+<script type="text/ng-template" id="template_textual_route.html">
+    <p class="routeOverview" ng-hide="step.routeExpanded">{{step.route.routes[0].legs[0].duration.text}}</p>
+    <div x-transport-line ng-repeat="routestep in step.route.routes[0].legs[0].steps" ng-show="step.routeExpanded" x-routestep="routestep" />
+</script>
+
+<script type="text/ng-template" id="change_route_modal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Change this sight: {{oldVenue}} to{{selectedSightText}}</h3>
+    </div>
+    <div class="modal-body" ng-include="modalTemplate">
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">{{buOkLabel}}</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal_loading.html">
+    Loading...
+</script>
+
+<script type="text/ng-template" id="modal_select_venue.html">
+    <accordion close-others="true">
+        <accordion-group ng-repeat="sight in sights" heading="{{sight.obj.sight.venue.name}}" is-open="false" ng-click="selectSight($index)">
+            <div class="row">
+                <p class="col-xs-9">Distance to {{oldVenue}}</p><p class="col-xs-3"><strong>{{sight.dis | number:0}} m</strong></p>
+            </div>
+            <div class="row">
+                <p class="col-xs-9">FourSquare Rating</p><p class="col-xs-3"><strong>{{sight.obj.sight.venue.rating}}</strong></p>
+            </div>
+            <p class="fsTip">
+                {{sight.obj.sight.tips[0].text}}
+            </p>
+        </accordion-group>
+    </accordion>
+</script>

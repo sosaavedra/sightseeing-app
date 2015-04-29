@@ -1,0 +1,27 @@
+<h2>
+      FourSquare stuff
+</h2>
+<div layout="horizontal">
+      <md-text-float label="Longitude" ng-model="lon"> </md-text-float>
+      <md-text-float label="Latitude" ng-model="lat"> </md-text-float>
+</div>
+<div>
+       Radius (m)
+       <md-slider discrete ng-model="radius" min="100" max="9999">
+       </md-slider>
+</div>
+
+<md-button ng-click="requestFS()">FourSqare Request</md-button>
+<md-list>
+<md-item class="venueResult md-whiteframe-z1" ng-repeat="venueItem in fsResults.response.groups[0].items">
+    <div class="md-tile-content">
+        <h3>{{venueItem.venue.name}}</h3>
+        <h4>{{venueItem.venue.location.formattedAddress[0] +
+                ', ' + venueItem.venue.location.formattedAddress[1] +
+                ', ' + venueItem.venue.location.formattedAddress[2]}}</h4>
+        <p ng-repeat="tip in venueItem.tips">
+            {{tip.text}}
+        </p>
+    </div>
+</md-item>
+</md-list>

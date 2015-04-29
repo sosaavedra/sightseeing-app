@@ -1,0 +1,51 @@
+
+ 	<div class="top-bar">
+		<!-- <span>detourist</span> -->
+		<img src="img/logo.png"/>
+	</div>
+
+	<div class="content">
+
+		<!-- <div id="map-canvas"></div> -->
+		<script type="text/ng-template" id="searchbox.tpl.html">
+	        <input id="destinationInput" class="form-control" type="text" placeholder="eg. Marienplatz, Munich">
+	    </script>
+		<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+			<ui-gmap-search-box template="searchbox.template" events="searchbox.events" parentdiv="searchInputBox">
+				</ui-gmap-search-box>
+		</ui-gmap-google-map>
+		<div class="shader">
+
+		</div>
+
+		<div class="select-location-box">
+			<span>Enter Destination</span>
+			<br />
+			<div id="searchInputBox" class="input-group">
+
+				
+				<div id="searchInputPlaceholder"></div>
+			      <!-- <input id="destinationInput" class="form-control" type="text" placeholder=""> -->
+			      <div class="input-group-addon btn" ng-hide="true"></div>
+			      <div class="input-group-addon btn btn-go" ng-hide="(error.srcMissing || error.dstMissing)" ng-click="doMain()">Go</div>
+			    </div>
+
+			    <div class="extra-options-Box">
+			    	<div class="arrival-box" >
+				    	<span class="prepend">Arrival{{ showTomorrow ? ' (tomorrow)' : ''}}</span>
+				    	<input type="time" id="arrivalInput" name="arrivalInput" placeholder="HH:mm" ng-model="timeConstraint" ng-change="changeTimeConstraint()" required />
+				    </div>
+				    <div class="category-box">
+				    	<span class="prepend">Categories</span>
+					    <select id="categoriesInput" multiple ng-model="userCategories" ng-options="value.name for value in fsCategories" lazy-load-options="">
+						</select>
+				    </div>
+
+			    </div>
+		    
+		    
+
+		   	
+		</div>
+	</div>
+

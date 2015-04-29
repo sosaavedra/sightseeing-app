@@ -1,0 +1,11 @@
+{
+  "name": "mongo",
+  "version": "1.0.0",
+  "description": "Mongo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erol",
+  "license": "ISC"
+}
